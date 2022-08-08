@@ -1,0 +1,15 @@
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: rvk-apps-nl
+  namespace: default
+spec:
+  secretName: rvk-apps-nl-staging-tls
+  issuerRef:
+    name: letsencrypt-staging
+    kind: ClusterIssuer
+  commonName: "*.rvk-apps.nl"
+  dnsNames:
+  - "rvk-apps.nl"
+  - "*.rvk-apps.nl"
